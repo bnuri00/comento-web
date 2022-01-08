@@ -1,0 +1,143 @@
+
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;600;700&display=swap');
+@font-face {
+      src : url("SeoulHangangB.ttf");
+      font-family: "SeoulHangangB"
+}
+
+:root {
+
+  /* color (from Color Hunt https://colorhunt.co/ ) */
+  --color-main: #F8EDE3;
+  --color-green1: #BDD2B6;
+  --color-green2: #A2B29F;
+  --color-green3: #798777;
+  --color-darkgreen:  #50594f; /*#798777;*/
+  --color-darkgreen-rgb: 80, 89, 79; /*121, 135, 119;*/
+
+}
+
+html {
+  scroll-padding-top: 3.5rem;
+}
+
+section{
+  font-weight: 200;
+  font-family: 'Noto Serif KR', serif;
+
+}
+
+header {
+  padding-top: 9.5rem;
+  padding-bottom: 6rem;
+  font-family:'SeoulHangangB';
+}
+
+section {
+  padding-top: 9rem;
+  padding-bottom: 9rem;
+}
+
+.text-color {
+  --bs-text-opacity: 1;
+  color: rgba(var(--color-darkgreen-rgb), var(--bs-text-opacity)) !important;
+}
+
+.bg-main {
+  background-color: var(--color-main) !important;
+}
+.bg-green1 {
+  background-color: var(--color-green1) !important;
+}
+.bg-green3 {
+  background-color: var(--color-green3);
+}
+.bg-darkgreen {
+  background-color: var(--color-darkgreen) !important;
+}
+/*--------------------------------for scroll animation-----------------------------------*/
+ html {
+    height: 100vh;
+    transition: background 0.8s;
+ }
+canvas {
+    position: sticky;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.canvas-wrapper{
+    height: 500vh;
+    background: #06808b;
+    padding-top: 50vh;
+}
+
+/*------------------------------------ footer----------------------------------------*/
+.footer {
+    width:100%;
+}
+.footer .footer_inner {margin:0 auto;overflow:hidden;}
+
+.footer .footer_wrap.top {width:100%; border-bottom:1px solid #ccc7c2;}
+.footer .footer_wrap.bottom .footer_inner {position:relative;}
+
+footer .footer_logo {padding:10px 0 0 60px;width:150px;float:left;}
+
+footer .footer_tx {padding:25px 0 0 60px;font-family:'Noto Serif KR',serif; font-weight:200;color:#ccc7c2;}
+footer .footer_tx .footer_tx_inner {overflow:hidden;}
+footer .footer_tx p {margin-right:27px;float:left;font-size:14px;line-height:15px;}
+footer .copyright {padding-left:60px;font-size:14px;font-weight:300;}
+
+/***********************************Custom navbar color**************************************/
+
+.navbar-bg{
+  --bs-bg-opacity: 0.6;
+  background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.navbar-custom{
+    color: rgba(var(--color-text-rgb), 1.0);
+    border-bottom: 3px solid rgba(var(--bs-white-rgb), 0.6);
+}
+
+
+.navbar-custom .navbar-brand {
+  color: rgba(var(--color-darkgreen-rgb), 0.9);
+  font-family:'SeoulHangangB';
+}
+
+.navbar-custom .navbar-brand:hover, .navbar-custom .navbar-brand:focus {
+  color: rgba(var(--color-darkgreen-rgb), 0.9);
+
+}
+.navbar-custom .navbar-nav .nav-link {
+  color: rgba(var(--color-darkgreen-rgb), 0.55);
+}
+.navbar-custom .navbar-nav .nav-link:hover, .navbar-custom .navbar-nav .nav-link:focus {
+  color: rgba(var(--color-darkgreen-rgb), 0.7);
+}
+.navbar-custom .navbar-nav .nav-link.disabled {
+  color: rgba(var(--color-darkgreen-rgb), 0.3);
+}
+.navbar-custom .navbar-nav .show > .nav-link,
+.navbar-custom .navbar-nav .nav-link.active {
+  color: rgba(var(--color-darkgreen-rgb), 0.9);
+}
+.navbar-custom .navbar-toggler {
+  color: rgba(var(--color-darkgreen-rgb), 0.55);
+  border-color: rgba(var(--color-darkgreen-rgb), 0.1);
+}
+.navbar-custom .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.navbar-custom .navbar-text {
+  color: rgba(var(--color-darkgreen-rgb), 0.55);
+}
+.navbar-custom .navbar-text a,
+.navbar-custom .navbar-text a:hover,
+.navbar-custom .navbar-text a:focus {
+  color: rgba(var(--color-darkgreen-rgb), 0.9);
+}
+

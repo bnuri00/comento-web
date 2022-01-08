@@ -11286,16 +11286,3 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-html {
-  scroll-padding-top: 3.5rem;
-}
-
-header {
-  padding-top: 9.5rem;
-  padding-bottom: 6rem;
-}
-
-section {
-  padding-top: 9rem;
-  padding-bottom: 9rem;
-}
