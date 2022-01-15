@@ -7,6 +7,11 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarResponsive">
             <ul class="navbar-nav ms-auto ">
                 <li class="nav-item"><a class="nav-link" href="#scroll-content">신제품 소개</a></li>
+                {% if user.is_authenticated %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'accounts:logout' %}">{{ user.username }} (logout)</a></li>
+                {% else %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'accounts:login' %}">login</a></li>
+                {% endif %}
             </ul>
         </div>
     </div>
