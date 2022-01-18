@@ -5,7 +5,10 @@ from django.core.validators import RegexValidator
 # velog.io/@mmy789 포스팅 참고
 # 정규식 이용, 유효성 검사
 class CustomUser(AbstractUser):
-    nickname = models.CharField(max_length=50, blank=True)
+    fullNameRegex = RegexValidator(regex=r'^[가-힣]+$')
+    fullname = models.CharField(validators=[fullNameRegex], max_length=20)
+    nickname = models.CharField(max_length=50, unique=True, blank=True)
+
     phoneNumberRegex = RegexValidator(regex=r'^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$')
     phone = models.CharField(validators=[phoneNumberRegex], max_length=13, unique=True)
 
