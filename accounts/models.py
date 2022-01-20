@@ -7,7 +7,7 @@ from django.core.validators import RegexValidator
 class CustomUser(AbstractUser):
     fullNameRegex = RegexValidator(regex=r'^[가-힣]+$')
     fullname = models.CharField(validators=[fullNameRegex], max_length=20)
-    nickname = models.CharField(max_length=50, unique=True, blank=True)
+    nickname = models.CharField(max_length=50, unique=True, blank=True, null=True)
 
     phoneNumberRegex = RegexValidator(regex=r'^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$')
     phone = models.CharField(validators=[phoneNumberRegex], max_length=13, unique=True)
@@ -17,3 +17,7 @@ class CustomUser(AbstractUser):
     zipcode = models.CharField(validators=[zipcodeRegex], max_length=5, blank=True)
     addr1 = models.CharField(max_length=100, blank=True)
     addr2 = models.CharField(max_length=100, blank=True)
+
+    def clean(self):
+        if self.nickname == "":
+            self.nickname = None
