@@ -20,21 +20,6 @@
 
 }
 
-html {
-  scroll-padding-top: 3.5rem;
-}
-
-section{
-  font-weight: 200;
-  font-family: 'Noto Serif KR', serif;
-
-}
-
-header {
-  padding-top: 9.5rem;
-  padding-bottom: 6rem;
-  font-family:'SeoulHangangB';
-}
 
 section {
   padding-top: 9rem;
@@ -61,6 +46,71 @@ section {
 .fw-supalight {
   font-weight: 200;
 }
+/*-----------------------------------------GNB----------------------------------------*/
+
+
+.navbar .nav-item:hover .dropdown-menu{ display: block; }
+
+.navbar .nav-item .dropdown-prod {
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+  border-radius: 0;
+  top: 80px;
+  left: 0;
+  z-index: 1;
+}
+
+.column {
+  float: left;
+  width: auto;
+  display: table;
+  margin: 0 auto;
+  padding-left: 50px;
+  min-width: 10rem;
+}
+
+.column li > a {
+  color: #9b9b9b;
+}
+
+  .column .dropdown-item:hover, .dropdown-item:focus {
+    color: #fff;
+    background-color: #333;
+  }
+.column .dropdown-item{
+    padding: 0.25rem 0;
+}
+
+/* menu triangle */
+.dropdown-prod:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -20px; /* 위치 */
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -60px; /* 위치 */
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid #333;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+
+/* person icon dropdown menu */
+.nav-icon{
+  font-size: 1.5rem;
+}
+.navbar .nav-item .dropdown-iconmenu{
+    margin-top:0;
+    position: absolute;
+    min-width: 8rem;
+    top: 50px;
+    right: -3rem;
+}
+
 /*--------------------------------for scroll animation-----------------------------------*/
  html {
     height: 100vh;
@@ -95,14 +145,14 @@ footer .footer_tx .footer_tx_inner {overflow:hidden;}
 footer .footer_tx p {margin-right:27px;float:left;font-size:14px;line-height:15px;}
 footer .copyright {padding-left:60px;font-size:14px;font-weight:300;}
 
-/***********************************Custom navbar color**************************************/
+/***********************************Custom sub navbar color**************************************/
 .navbar-local{
 
 }
 .sticky-localNav{
   position: -webkit-sticky;
   position: sticky;
-  top: 50px;
+  top: 87px;
   z-index: 1020;
 }
 .navbar-bg{
@@ -114,12 +164,14 @@ footer .copyright {padding-left:60px;font-size:14px;font-weight:300;}
 .navbar-custom{
     color: rgba(var(--color-text-rgb), 1.0);
     border-bottom: 1px solid rgba(var(--bs-gray-500-rgb), 0.7);
+    padding: 0;
 }
 
 
 .navbar-custom .navbar-brand {
   color: rgba(var(--color-darkgreen-rgb), 0.9);
   font-family:'SeoulHangangB';
+  font-size: 1rem;
 }
 
 .navbar-custom .navbar-brand:hover, .navbar-custom .navbar-brand:focus {

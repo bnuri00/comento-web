@@ -2,20 +2,64 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <div class="container px-4 ">
-        <a class="navbar-brand fw-bold" href="{% url 'main' %}">A</a>
+        <a class="navbar-brand fw-bold" href="{% url 'main' %}" style="font-size: 2rem;">AUSH</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarResponsive">
-            <ul class="navbar-nav ms-auto ">
-                <li class="nav-item"><a class="nav-link" href="{% url 'new' %}">New</a></li>
-                <li class="nav-item"><a class="nav-link" href="#scroll-content">제품</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'company' %}">회사 소개</a></li>
-                <li class="nav-item"><a class="nav-link" href="#scroll-content">이벤트</a></li>
-                {% if user.is_authenticated %}
-                <li class="nav-item"><a class="nav-link" href="{% url 'accounts:logout' %}">{{ user.username }} (logout)</a></li>
-                {% else %}
-                <li class="nav-item"><a class="nav-link" href="{% url 'accounts:login' %}">login</a></li>
-                {% endif %}
+            <ul class="navbar-nav ms-auto ps-5 ">
+                <li class="nav-item py-3 ps-5 ms-5 me-4"><a class="nav-link text-white" href="{% url 'new' %}">New</a></li>
+                <li class="nav-item px-4 py-3"><a class="nav-link text-white" href="#scroll-content">제품</a>
+                    <ul class="dropdown-prod dropdown-menu pt-5 pb-4" >
+                    <div style="width: 700px; margin: 0 auto;">
+                        <div class="column" style="">
+                            <h5 class="fw-bold">베스트</h5>
+                        </div>
+                        <div class="column" style="">
+                            <h5 class="fw-bold">Category2</h5>
+                           <li><a class="dropdown-item" href="#"> Submenu2</a></li>
+                           <li><a class="dropdown-item" href="#"> Submenu </a></li>
+                           <li><a class="dropdown-item" href="#"> Submenu </a></li>
+                        </div>
+                        <div class="column" style="">
+                             <h5 class="fw-bold">Category3</h5>
+                             <li><a class="dropdown-item" href="#"> Submenu2</a></li>
+                             <li><a class="dropdown-item" href="#"> Submenu </a></li>
+                             <li><a class="dropdown-item" href="#"> Submenu </a></li>
+                        </div>
+                        <div class="column" style="">
+                            <h5 class="fw-bold">Category3</h5>
+                               <li><a class="dropdown-item" href="#"> Submenu2</a></li>
+                               <li><a class="dropdown-item" href="#"> Submenu </a></li>
+                               <li><a class="dropdown-item" href="#"> Submenu </a></li>
+                        </div>
+                    </div></ul>
+                </li>
+                <li class="nav-item px-4 py-3"><a class="nav-link text-white" href="{% url 'company' %}">회사 소개</a></li>
+                <li class="nav-item px-4 py-3"><a class="nav-link  text-white" href="#scroll-content">이벤트</a></li>
+
+
             </ul>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item px-2">
+                    <a class="nav-link text-white" href="#" > <i class="bi bi-search nav-icon"></i> </a>
+                </li>
+                <li class="nav-item dropdown px-2">
+        		   <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown"> <i class="bi bi-person-circle nav-icon"></i>  </a>
+        		    <ul class="dropdown-menu dropdown-iconmenu mr-3">
+                        {% if user.is_authenticated %}
+                        <li><a class="dropdown-item" href="{% url 'accounts:logout' %}">{{ user.username }} (logout)</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href=""> 내정보 </a></li>
+                        {% else %}
+                        <li><a class="dropdown-item" href="{% url 'accounts:login' %}">login</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'accounts:signup' %}"> 회원가입 </a></li>
+                        {% endif %}
+        		    </ul>
+        		</li>
+                <li class="nav-item px-2">
+        		   <a class="nav-link text-white" href="#"> <i class="bi bi-bag nav-icon"><span class="top-50 translate-middle badge rounded-pill bg-light text-dark" style="padding: 0.3em 0.3em; font-size: 0.5rem; font-style: normal;">0</span></i>  </a>
+        		</li>
+          </ul>
         </div>
     </div>
 </nav>
