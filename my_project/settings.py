@@ -141,3 +141,11 @@ LOGOUT_REDIRECT_URL = '/'
 # Custom User Model
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
+
+
+# Meda
+MEDIA_URL = '/media/'
+MEDIA_ROOT = [
+    BASE_DIR / 'media',
+]
+

@@ -3,10 +3,10 @@
 
     <!-- Header-->
     <header class="bg-main bg-gradient text-color">
-        <div class="container px-4">
+        <div class="container px-4 text-center">
             <div class="row gx-4 justify-content-center">
                 <div class="col-lg-8">
-                    <h1 class="fw-bolder" style="font-size:288px;">A</h1>
+                    <h1 class="fw-bold" style="">이게 바로 몽몽</h1>
                 </div></div></div>
     </header>
     <!-- About section-->
@@ -45,7 +45,7 @@
             <div class="row gx-4 gx-lg-5 align-items-center my-5">
                 <div class="col-lg-7"><img class="" src="{% static 'bathbomb.jpg'%}" alt="신상품" /></div>
                 <div class="col-lg-5">
-                    <h1 class="font-weight-light">밀키 배쓰밤 세트</h1>
+                    <h1 class="font-weight-light">몽몽 배쓰밤 세트</h1>
                     <p></p>
                 </div>
             </div>
@@ -59,14 +59,15 @@
         <div class="container px-4">
             <div class="row gx-4 justify-content-center">
                 <div class="col-lg-8">
+                    <h1>Other Items</h1>
                     {% if content_list %}
                         {% for content in content_list %}
 
                         <div class="row gx-4 gx-lg-5 align-items-center my-5">
                             <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt="..." /></div>
                             <div class="col-lg-5">
-                                <h1 class="font-weight-light"><a href="/mysite/{{ content.id }}/">{{ content.title }}</a></h1>
-                                <p>{{ content.content| truncatewords:20 }}</p>
+                                <h2 class="font-weight-light"><a href="/mysite/{{ content.id }}/">{{ content.name }}</a></h2>
+                                <p>{{ content.description| truncatewords:20 }}</p>
                                 <a class="btn btn-primary" href="{% url 'detail' content.id %}">상품 상세보기</a>
                             </div>
                         </div>

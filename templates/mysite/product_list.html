@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+        <!-- Header-->
+        <header class="bg-gradient text-white" style="background-color:#325288;">
+            <div class="container px-4 py-5 text-center">
+                 {% if category_list %}
+                <h1 class="fw-bolder pt-5">{{category_list.name}}</h1>
+                {% endif %}
+                <p class="lead pb-5">blah blah blah</p>
+
+            </div>
+        </header>
+
+    <!-- 상품 리스트 -->
+        <section id="">
+            <div class="container px-4">
+                <div class="row prod-list gx-4 ">
+                    {% if product_list %}
+                        {% for product in product_list %}
+                    <div class="col-lg-3 border text-center">
+                        <div class="thumb"><a href="{% url 'detail' product.id %}"><img alt="product" class="img-fluid rounded mb-4 mb-lg-0" src="{{ product.image.url }}"/></a></div>
+                      <div class="prod-info">
+                          <div class="prod-title"><a href="{% url 'detail' product.id %}">{{ product.name }}</a></div>
+                        <div class="prod-about">{{ product.about| truncatewords:5 }}</div>
+                        <div class="prod-price">{{ product.price}}</div>
+                          <div></div>
+                      </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                        <p>content가 없습니다.</p>
+                    {% endif %}
+                </div></div></section>
+
+
+
+
+
+{% endblock %}

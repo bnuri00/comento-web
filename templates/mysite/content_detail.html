@@ -1,7 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2>{{ content_list.title }}</h2>
-<div>
-    {{ content_list.content }}
-</div>
+
+<!-- Details page-->
+    <section class="bg-green1 text-color" id="">
+        <div class="container px-4">
+            <div class="row gx-4 justify-content-center">
+                <div class="col-lg-8">
+                    <h2 style="">{{ product_list.name }}</h2>
+                    <div>{{ product_list.description }}</div>
+                    <h4>{{ product_list.price }}</h4>
+                    <h5>{{ product_list.category_id.name}}</h5>
+
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

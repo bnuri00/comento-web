@@ -19,7 +19,7 @@ class Product(models.Model):
 
     price = models.PositiveIntegerField()
     discount = models.PositiveSmallIntegerField(help_text='할인률(0~99 입력, default 0)', validators=[MaxValueValidator(99,'99 이하의 값을 입력하세요')], default=0)
-    image = models.ImageField(upload_to='')     #수정하기
+    image = models.ImageField()
 
     category_id = models.ForeignKey('Category', on_delete=models.CASCADE, related_name='Product')
     pub_date = models.DateTimeField('date published')
