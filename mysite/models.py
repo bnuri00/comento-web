@@ -3,12 +3,16 @@ from django.db.models import Q
 from django.core.validators import MinValueValidator, MaxValueValidator
 from accounts.models import CustomUser
 
+
 class Category(models.Model):
     name = models.CharField(max_length=100)
     parent_id = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True,
                                   limit_choices_to=~Q(depth=1))     # 2차 카테고리를 parent로 지정 불가하게 설정
     depth = models.PositiveSmallIntegerField(validators=[MaxValueValidator(1)], default=0) # 2차 카테고리까지 가능
     priority = models.PositiveSmallIntegerField()  # 정렬 우선순위
+
+    def __str__(self):
+        return self.name
 
 
 # 제품
@@ -23,6 +27,10 @@ class Product(models.Model):
 
     category_id = models.ForeignKey('Category', on_delete=models.CASCADE, related_name='Product')
     pub_date = models.DateTimeField('date published')
+
+    def __str__(self):
+        return self.name
+
 
 
 # Comment
