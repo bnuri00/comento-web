@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models import Q
 from django.core.validators import MinValueValidator, MaxValueValidator
-
+from accounts.models import CustomUser
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
@@ -23,3 +23,12 @@ class Product(models.Model):
 
     category_id = models.ForeignKey('Category', on_delete=models.CASCADE, related_name='Product')
     pub_date = models.DateTimeField('date published')
+
+
+# Comment
+class Comment(models.Model):
+    author = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    content_list = models.ForeignKey(Product, on_delete=models.CASCADE)
+    content = models.TextField()
+    create_date = models.DateTimeField(auto_now_add=True)
+    modify_date = models.DateTimeField(auto_now=True)
