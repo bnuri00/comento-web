@@ -19,9 +19,9 @@
                     {% if product_list %}
                         {% for product in product_list %}
                     <div class="col-lg-3 border text-center">
-                        <div class="thumb"><a href="{% url 'detail' product.id %}"><img alt="product" class="img-fluid rounded mb-4 mb-lg-0" src="{{ product.image.url }}"/></a></div>
+                        <div class="thumb"><a href="{% url 'mysite:detail' product.id %}"><img alt="product" class="img-fluid rounded mb-4 mb-lg-0" src="{{ product.image.url }}"/></a></div>
                       <div class="prod-info">
-                          <div class="prod-title"><a href="{% url 'detail' product.id %}">{{ product.name }}</a></div>
+                          <div class="prod-title"><a href="{% url 'mysite:detail' product.id %}">{{ product.name }}</a></div>
                         <div class="prod-about">{{ product.about| truncatewords:5 }}</div>
                         <div class="prod-price">{{ product.price}}</div>
                           <div></div>

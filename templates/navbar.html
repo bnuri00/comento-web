@@ -6,17 +6,17 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarResponsive">
             <ul class="navbar-nav ms-auto ps-5 ">
-                <li class="nav-item py-3 ps-5 ms-5 me-4"><a class="nav-link text-white" href="{% url 'new' %}">New</a></li>
+                <li class="nav-item py-3 ps-5 ms-5 me-4"><a class="nav-link text-white" href="{% url 'mysite:new' %}">New</a></li>
                 <li class="nav-item px-4 py-3"><a class="nav-link text-white" href="#">제품</a>
                     <ul class="dropdown-prod dropdown-menu pt-5 pb-4" >
                     <div style="width: 700px; margin: 0 auto;">
                         <div class="column" style="">
-                            <h5 class=""><a class="dropdown-item fw-bold text-white" href="{% url 'prodAll' %}">베스트</a></h5>
+                            <h5 class=""><a class="dropdown-item fw-bold text-white" href="{% url 'mysite:prodAll' %}">베스트</a></h5>
                         </div>
                         <div class="column" style="">
                             <h5 class="fw-bold">배쓰</h5>
-                           <li><a class="dropdown-item" href="{% url 'prodList' '배쓰밤' %}"> 배쓰밤</a></li>
-                           <li><a class="dropdown-item" href="{% url 'prodList' cate_name='배쓰오일' %}">배쓰오일</a></li>
+                           <li><a class="dropdown-item" href="{% url 'mysite:prodList' '배쓰밤' %}"> 배쓰밤</a></li>
+                           <li><a class="dropdown-item" href="{% url 'mysite:prodList' '배쓰오일' %}">배쓰오일</a></li>
                            <li><a class="dropdown-item" href="#"> Submenu </a></li>
                         </div>
                         <div class="column" style="">

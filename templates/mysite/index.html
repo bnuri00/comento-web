@@ -66,9 +66,9 @@
                         <div class="row gx-4 gx-lg-5 align-items-center my-5">
                             <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt="..." /></div>
                             <div class="col-lg-5">
-                                <h2 class="font-weight-light"><a href="/mysite/{{ content.id }}/">{{ content.name }}</a></h2>
+                                <h2 class="font-weight-light"><a href="{% url 'mysite:detail' content.id %}">{{ content.name }}</a></h2>
                                 <p>{{ content.description| truncatewords:20 }}</p>
-                                <a class="btn btn-primary" href="{% url 'detail' content.id %}">상품 상세보기</a>
+                                <a class="btn btn-primary" href="{% url 'mysite:detail' content.id %}">상품 상세보기</a>
                             </div>
                         </div>
                         {% endfor %}
